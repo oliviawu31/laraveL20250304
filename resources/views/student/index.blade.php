@@ -40,7 +40,14 @@
                         <td>{{$value->id}}</td>
                         <td>{{$value->name}}</td>
                         <td>{{$value->mobile}}</td>
-                        <td><a href="{{route('students.edit',['student' => $value->id])}}" class="btn btn-warning">edit</a></td>
+                        <td>
+                            <form action="{{route('students.destroy',['student' => $value->id])}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <a href="{{route('students.edit',['student' => $value->id])}}" class="btn btn-warning">Edit</a>
+                                <button type="submit" class="btn btn-danger">Del</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
 
@@ -48,6 +55,8 @@
             </tbody>
         </table>
     </div>
+
+{{-- add Modal --}}
 
     <!-- The Modal -->
 <div class="modal" id="myModal">
@@ -89,6 +98,10 @@
       </div>
     </div>
   </div>
+
+  {{-- edit Modal --}}
+ 
+
 
 </body>
 

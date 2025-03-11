@@ -68,7 +68,15 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        dd("hello edit $id");
+        // $url= route('students.edit',['student' => $id]);
+        // dd($url);
+        // dd("hello edit $id");
+
+        // get fetchAll
+        // first fetch
+        $data = Student::where('id',$id)->first();
+        // dd($data);
+        return view('student.edit', ['data' => $data]);
     }
 
     /**
@@ -76,7 +84,18 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $input = $request->except('_token','_method');
+        $data = Student::where('id',$id)->first();
+        $data->name = $input['name'];
+        $data->mobile = $input['mobile'];
+        $data->save();
+        return redirect()->route('students.index');
+
+
+        // dd($input);
+        // "name" => "amy"
+        // "mobile" => "09112233"
+        // dd('Hello update $id');
     }
 
     /**
@@ -84,7 +103,10 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd("hello destroy $id");
+        $data = Student::where('id',$id)->first();
+        $data->delete();
+        return redirect()->route('students.index');
     }
 
     public function excel()
