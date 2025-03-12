@@ -18,10 +18,9 @@ class StudentController extends Controller
         $data = Student::get();
 
         // $phone = User::find(1)->phone;
-        $data = Student::with('phone')->get();
-        // dd($data);
-        // dd($data[0]->name);
-       
+        $data = Student::with('phone')->with('hobbiesRelation')->get();
+        // dd($data[0]->phoneRelation);
+        // dd($data[0]->hobbiesRelation[0]->name);
         return view('student.index', ['data' => $data]);
     }
 

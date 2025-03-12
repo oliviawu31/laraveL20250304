@@ -30,11 +30,12 @@
                     <th width="10%">NAME</th>
                     <th width="20%">MOBILE</th>
                     <th width="20%">PHONE</th>
+                    <th width="20%">HOBBIES</th>
                 </tr>
             </thead>
             <tbody>
                 @php
-                // dd($data)    ;
+                // dd($data) 
                 @endphp
                 @foreach ($data as $value)
                     <tr>
@@ -45,7 +46,9 @@
                             {{$value->phone->id ?? ''}}
                             {{$value->phone->student_id ?? ''}}
                             {{$value->phone->phone ?? ''}}
-
+                        </td>
+                        <td>
+                           {{($value->hobbiesRelation[0]->name ?? '')}}
                         </td>
                         <td>
                             <form action="{{route('students.destroy',['student' => $value->id])}}" method="post">
