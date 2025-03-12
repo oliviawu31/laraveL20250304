@@ -28,7 +28,7 @@
                 <tr>
                     <th width="5%">ID</th>
                     <th width="10%">NAME</th>
-                    <th width="20%">Mobile</th>
+                    <th width="20%">MOBILE</th>
                     <th width="20%">PHONE</th>
                 </tr>
             </thead>
@@ -89,7 +89,7 @@
                     <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
                   </div>
                   <div class="mb-3 mt-3">
-                      <label for="mobile">Mobile:</label>
+                      <label for="mobile">MOBILE:</label>
                       <input type="mobile" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile">
                     </div>
                 </div>

@@ -22,11 +22,15 @@
 
     <div class="mb-3 mt-3">
       <label for="name">Name:</label>
-      <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" value="{{ $data['name']}}">
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value="{{ $data['name']}}">
     </div>
     <div class="mb-3 mt-3">
         <label for="mobile">Mobile:</label>
-        <input type="mobile" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" value="{{ $data['mobile']}}">
+        <input type="text" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile" value="{{ $data['mobile']}}">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="phone">Phone:</label>
+        <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" value="{{ $data['phone']['phone'] }}">
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
