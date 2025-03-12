@@ -56,7 +56,7 @@ class StudentController extends Controller
         // dd($request);
         $input = $request->except('_token');
         // dd($input);
-        $hobbyArr = explode(",",$input['hobbies']);
+        $hobbyArr = explode(",", $input['hobbies']);
         // dd($hobbyArr);
 
         // 主表
@@ -69,13 +69,13 @@ class StudentController extends Controller
         $data->mobile = $input['mobile'];
         $data->save();
 
-        // 子表 phones
+        // 新增子表 phones
         $item = new Phone;
         $item->student_id = $data->id;
         $item->phone = $input['phone'];
         $item->save();
 
-        // 子表 hobbies
+        // 新增子表 hobbies
         foreach ($hobbyArr as $key => $value) {
             
             $hobby = new Hobby;
@@ -132,6 +132,15 @@ class StudentController extends Controller
         $item->phone = $input['phone'];
         $item->save();
 
+        // 新增子表 hobbies
+        foreach ($hobbyArr as $key => $value) {
+                $hobby = new Hobby;
+                $hobby->student_id = $data->id;
+                $hobby->name = $value;
+                $hobby->save();
+            }
+    
+
         return redirect()->route('students.index');
 
 
@@ -148,6 +157,7 @@ class StudentController extends Controller
     {
         // 刪除子表
         Phone::where('student_id',$id)->delete();
+        
         // 刪除主表
         Student::where('id',$id)->delete();
         return redirect()->route('students.index');
