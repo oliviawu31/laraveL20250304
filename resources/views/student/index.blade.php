@@ -16,7 +16,7 @@
     @endphp
 
     <div class="container mt-3">
-        <h2>Bordered Table</h2>
+        <h2>Student Table</h2>
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
         <p><a href="{{route('students.create')}}" class="btn btn-success">add</a>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -28,7 +28,8 @@
                 <tr>
                     <th width="5%">ID</th>
                     <th width="10%">NAME</th>
-                    <th width="20%">mobile</th>
+                    <th width="20%">Mobile</th>
+                    <th width="20%">PHONE</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,12 @@
                         <td>{{$value->id}}</td>
                         <td>{{$value->name}}</td>
                         <td>{{$value->mobile}}</td>
+                        <td>
+                            {{$value->phone->id ?? ''}}
+                            {{$value->phone->student_id ?? ''}}
+                            {{$value->phone->phone ?? ''}}
+
+                        </td>
                         <td>
                             <form action="{{route('students.destroy',['student' => $value->id])}}" method="post">
                                 @csrf
