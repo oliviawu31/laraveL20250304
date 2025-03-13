@@ -89,12 +89,20 @@
               
                   <div class="mb-3 mt-3">
                     <label for="name">Name:</label>
-                    <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
                   </div>
                   <div class="mb-3 mt-3">
                       <label for="mobile">MOBILE:</label>
-                      <input type="mobile" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile">
+                      <input type="text" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile">
                     </div>
+                    <div class="mb-3 mt-3">
+                        <label for="phone">PHONE:</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone">
+                      </div>
+                      <div class="mb-3 mt-3">
+                        <label for="hobbies">HOBBIES:</label>
+                        <input type="text" class="form-control" id="hobbies" placeholder="Enter hobbies" name="hobbies">
+                      </div>
                 </div>
             </div>
                 
